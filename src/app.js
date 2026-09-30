@@ -21,4 +21,15 @@ app.get("/notes", (req, res) => {
     notes: notes,
   });
 });
+//delete /notes/:1
+app.delete('/notes/:index',(req,res)=>{
+
+    const index = req.params.index//req param req http 2 ways body or param  body is for post in url ?->param(dictionary or object)
+
+    delete notes[index]
+
+    res.status(200).json({
+        message: "note delete successfully"
+    })
+})
 module.exports = app; //isse ham app(jo ki server ka instance h) ko export karte h

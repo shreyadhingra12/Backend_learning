@@ -32,4 +32,14 @@ app.delete('/notes/:index',(req,res)=>{
         message: "note delete successfully"
     })
 })
+
+app.patch('/notes/:index',(res,req)=>{
+    const index = req.params.index
+    const description= req.body.description
+
+    notes[index].description= description
+    res.status(200).json({
+        message: "note delete successfully"
+    })
+})
 module.exports = app; //isse ham app(jo ki server ka instance h) ko export karte h
